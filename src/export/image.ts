@@ -1,4 +1,5 @@
 import html2canvas from 'html2canvas'
+import { marked } from 'marked'
 import type { Question } from '@/types/question'
 
 export async function exportQuestionImage(question: Question): Promise<void> {
@@ -6,7 +7,7 @@ export async function exportQuestionImage(question: Question): Promise<void> {
   container.style.cssText = 'padding:24px;background:white;width:360px;font-family:system-ui;'
   container.innerHTML = `
     <div style="font-size:16px;color:#333;margin-bottom:12px">${question.questionText}</div>
-    <div style="font-size:14px;color:#16a34a;margin-bottom:8px">答案：${question.answerText}</div>
+    <div style="font-size:14px;color:#16a34a;margin-bottom:8px">答案：${marked.parse(question.answerText)}</div>
     <div style="font-size:12px;color:#999;text-align:right">Smart Study</div>
   `
   document.body.appendChild(container)
