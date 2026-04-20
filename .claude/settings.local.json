@@ -6,7 +6,8 @@
       "Bash(npm init *)",
       "Bash(npm install *)",
       "Bash(npx vue-tsc *)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(gh auth *)"
     ]
   }
 }
