@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+/* iOS Safari fixes */
+html, body {
+  height: 100%;
+  overflow: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+#app {
+  height: 100%;
+  overflow: hidden;
+}
+
+input, textarea, select {
+  font-size: 16px !important; /* prevent iOS auto-zoom */
+}
+
+.safe-top {
+  padding-top: env(safe-area-inset-top);
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
